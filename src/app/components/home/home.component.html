@@ -1,0 +1,36 @@
+<div>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Total Time In Month</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="let employee of employees"
+        [class.table-danger]="isUnder100Hours(employee.TotalWorkedHours)"
+      >
+        <td>{{ employee.EmployeeName ?? "Unknown" }}</td>
+        <td>{{ employee.TotalWorkedHours }} hrs</td>
+        <td>
+          <button type="button" class="btn btn-primary">Edit</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div style="display: block">
+    <canvas
+      baseChart
+      [type]="'pie'"
+      [datasets]="pieChartDatasets"
+      [labels]="pieChartLabels"
+      [options]="pieChartOptions"
+      [plugins]="pieChartPlugins"
+      [legend]="pieChartLegend"
+    >
+    </canvas>
+  </div>
+</div>
