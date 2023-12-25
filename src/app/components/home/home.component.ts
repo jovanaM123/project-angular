@@ -10,15 +10,6 @@ import { ChartOptions, ChartDataset } from 'chart.js';
 })
 export class HomeComponent {
   employees: IEmployeeViewData[] | null = [];
-
-  /*public pieChartOptions: ChartOptions<'pie'> = {
-    responsive: false,
-  };
-  public pieChartLabels = this.employees?.map(employee => employee.EmployeeName)
-  public pieChartDatasets = [ {
-    data: this.employees?.map(employee => employee.TotalWorkedHours)
-  } ]*/
-
   pieChartOptions: ChartOptions<'pie'> = {
     responsive: false,
   };
